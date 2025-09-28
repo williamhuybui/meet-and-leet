@@ -1,5 +1,5 @@
 class Solution:
-    def largestAltitude(self, gain: List[int]) -> int:
+    def largestAltitude(self, gain: list[int]) -> int:
         altitudes = 0
         max_altitudes = altitudes
         for i in range(len(gain)):
