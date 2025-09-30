@@ -26,3 +26,25 @@ def dfs(node, state):
     right = dfs(node.right, state)
     "Some code"
     return "Some code"
+
+def dfs(start_index, path):
+    """
+    Topic: Backtracking
+    Backtracking template to explore all paths from start_index to leaf nodes.
+    """
+    def is_leaf(index):
+    # Define your own leaf condition
+        return 
+  
+    def get_edges(index):
+    # Define your own edges retrieval
+        return []
+  
+    if is_leaf(start_index):
+    # report(path) #do something with the path here
+        return
+  
+    for edge in get_edges(start_index):
+        path.add(edge)
+        dfs(start_index + 1, path)
+        path.pop()
