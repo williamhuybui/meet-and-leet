@@ -1,5 +1,6 @@
 class Solution:
     def equalPairs(self, grid: list[list[int]]) -> int:
+        #Hash map
         n = len(grid)
         row_count = {}
         for row in grid:
@@ -7,16 +8,12 @@ class Solution:
                 row_count[tuple(row)] = 1
             else: 
                 row_count[tuple(row)] += 1
-        print("Row Tuple and frequency", row_count)
-        #Tranpose
-        print("Before tranpose", grid)
-        for i in range(n):
-            for j in range(i + 1, n):
-                grid[i][j], grid[j][i] = grid[j][i], grid[i][j]
-        print("After tranpose", grid)
         #Check col
         ans = 0
-        for col in grid:
+        for i in range(n):
+            col = []
+            for j in range(n):
+                col.append(grid[j][i])
             if tuple(col)in row_count:
                 ans += row_count[tuple(col)]
         return ans
