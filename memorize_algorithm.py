@@ -48,3 +48,21 @@ def dfs(start_index, path):
         path.add(edge)
         dfs(start_index + 1, path)
         path.pop()
+
+
+def subsets(self, nums: list[int]) -> list[list[int]]:
+    """
+    Topic: Backtracking
+    Given an integer array nums of unique elements, return all possible subsets (the power set).
+    """
+    res = []
+    path = []
+
+    def dfs(start: int) -> None:
+        res.append(path.copy())
+        for i in range(start, len(nums)):
+            path.append(nums[i])
+            dfs(i + 1) 
+            path.pop()
+    dfs(0)
+    return res
