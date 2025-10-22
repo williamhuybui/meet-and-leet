@@ -1,3 +1,4 @@
+from typing import Optional
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -19,6 +20,8 @@ class Solution:
                 max_sum = arr[i] + arr[len(arr)-1-i]
         return max_sum
 
+class Solution:
+    def pairSum(self, head: Optional[ListNode]) -> int:
         #Method 2: Reverse linked list: Time Complexity O(n) Space Complexity 0(1)
         head1 = head2 = head
         #1) Find midpoint
@@ -29,7 +32,7 @@ class Solution:
         m = l//2
 
         #2) Reverse second half
-        for i in range(m):
+        for _ in range(m):
             head2 = head2.next
 
         curr = head2 
@@ -45,7 +48,7 @@ class Solution:
         second_half = prev # Just for clarity
         
         res = 0
-        for i in range(m):
+        for _ in range(m):
             res = max(first_half.val + second_half.val, res)
             first_half = first_half.next
             second_half = second_half.next
