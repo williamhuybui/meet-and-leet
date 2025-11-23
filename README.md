@@ -28,4 +28,4 @@ https://algo.monster/referral?ref=250d64553fd306b82dc8521dd62a26838894e48346a146
 
 ## Important Notes
 When working with Python type hints, use lowercase `list` instead of uppercase `List` for better compatibility with modern Python versions (3.9+).
-Testing Branch Protection rule.
+Testing Branch Protection rule. Owner cant by pass.
